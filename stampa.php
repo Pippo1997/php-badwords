@@ -1,21 +1,3 @@
-<?php
-
-// stampo in un array il post e stampo le parole a video
-echo '<pre>';
-var_dump($_POST);
-echo '</br>';
-
-// inserisco il testo messo negli inpunt in una variabile
-$myString = "{$_POST['testo']} {$_POST['badwords']}";
-echo $myString;
-echo '</br>';
-$newString = str_replace($_POST['badwords'], '***', $myString);
-echo strlen($myString);
-echo '</br>';
-echo $newString
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +7,21 @@ echo $newString
     <title>PHP Stampa</title>
 </head>
     <body>
-        <h2>
-            <?php echo $newString?>
-        </h2>
+    <?php
+        // stampo in un array il post e stampo le parole a video
+        echo '<pre>';
+        var_dump($_POST);
+        echo '</br>';
+
+        // inserisco il testo messo negli inpunt in una variabile
+        $myString = "{$_POST['testo']} {$_POST['badwords']}";
+        echo $myString;
+        echo '</br>';
+        $newString = str_replace($_POST['badwords'], '***', $myString);
+        echo strlen($myString);
+        echo '</br>';
+        echo $newString
+    ?>
+        <h2><?php echo $newString?></h2>
     </body>
 </html>
